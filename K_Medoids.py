@@ -1,3 +1,14 @@
+%matplotlib inline
+from matplotlib import pyplot
+import numpy as np
+from numpy import zeros, array, tile
+from scipy.linalg import norm
+import numpy.matlib as ml
+import random
+from sklearn.metrics.pairwise import pairwise_distances
+from scipy.spatial import distance
+
+
 def find_center(point,center,D):
     min_point = 0
     mindis = 10000
@@ -7,10 +18,18 @@ def find_center(point,center,D):
             min_point = int(center[i])
     return [min_point,mindis]
 
-def kmedoids(k,x,Dis):
+
+#k is the number of class
+#x is the data  ,it's shape is [ [ x1 y1]
+#                                [ x2 y2]
+#                                ...
+#                                [ xn yn] ]
+          
+def kmedoids(k,x):
     center = []
     dis = []
     mindis_p = []
+    Dis = distance.cdist(x, x, 'euclidean')
     cluster_num = k
     point_num = len(x)
     if(point_num != len(Dis)):
@@ -35,8 +54,6 @@ def kmedoids(k,x,Dis):
                     plt.plot(x[i][0],x[i][1],color=colour[num],markerfacecolor=colour[num],marker='o')
                     if(n == 1):# calculate the initial sum of cnetre[i] distance
                         dis[num] = dis[num]+ k[1]
-
-
         for i in range(cluster_num):#plot centre point
             plt.plot(x[int(center[i])][0],x[int(center[i])][1],color='k',markerfacecolor='k',marker='^')
         for i in range(cluster_num): #refresh centre
