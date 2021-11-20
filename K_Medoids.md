@@ -58,31 +58,5 @@ kmedoids(3,x,Dis)
     circle_4 center 2: 1018
     
 
+![image](https://user-images.githubusercontent.com/94750458/142730850-41bfb888-c450-43c1-9398-3712a9243c84.png)
 
-    
-![png](output_0_1.png)
-    
-
-
-
-    
-![png](output_0_2.png)
-    
-
-
-
-    
-![png](output_0_3.png)
-    
-
-
-
-    
-![png](output_0_4.png)
-    
-
-
-
-```python
-
-```
